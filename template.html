@@ -5,16 +5,18 @@
         <!-- Some basic hygiene meta-data -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>BB-Org</title>
+        <title>$title$</title>
         <meta name="author" content="BB">
         <meta name="description" content="Bhadva Bhindi's space on the net">
         
         <link rel="stylesheet" type="text/css" href="static/style.css">
-    
+        
     </head>
-    <body id="about-page">
+    <body id="post-page">
         <header id="site-header">
-            <h1>Why is BB?</h1>
+            <h1>$title$</h1>
+            <p> - $author$, $date$</p>
+            <p>$summary$</p>
             <nav>
                 <span><a href="index.html">Blog</a></span>
                 <span><a href="about.html">About</a></span>
@@ -22,9 +24,8 @@
             <hr>
         </header>
         <main>
-            <p>
-               In this I tell you who and why I am.     
-            </p>
+          $body$
+        </main>
         <footer>
             <hr>
             <small>Copyright, Yours Truly.</small>
