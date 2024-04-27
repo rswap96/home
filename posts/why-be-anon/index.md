@@ -1,13 +1,14 @@
 ---
 title: Why be Anon?
-date: April 27, 2024
+created: April 27, 2024
+updated: April 27, 2024
 author: Yours Truly
 summary: Summary
 ---
 
 # Why be anonymous?
-![](cool-okra.jpeg)
 
----
+<img src="cool-okra.jpeg" align="center">
+
 
 

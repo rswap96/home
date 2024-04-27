@@ -9,18 +9,19 @@
         <meta name="author" content="BB">
         <meta name="description" content="Bhadva Bhindi's space on the net">
         
-        <link rel="stylesheet" type="text/css" href="static/style.css">
+        <link rel="stylesheet" type="text/css" href="../../static/style.css">
         
     </head>
     <body id="post-page">
         <header id="site-header">
             <h1>$title$</h1>
-            <p> - $author$, $date$</p>
-            <p>$summary$</p>
-            <nav>
-                <span><a href="index.html">Blog</a></span>
-                <span><a href="about.html">About</a></span>
-            </nav>
+            <span class="home-icon"><a href="../../index.html"><img src="../../static/home-icon.png"></a></span>
+            <div class="cluster post-meta">
+                <span>By: $author$</span>
+                <span>Created: $created$</span>
+                <span>Updated: $updated$</span>    
+            </div>
+            <div class="summary"><p>$summary$</p></div>
             <hr>
         </header>
         <main>

@@ -1,4 +1,30 @@
 :root {
+    /* --------------------------------------------------
+     * MEASURE: Basis for all proportions.
+     * -------------------------------------------------- */
+     --measure: 90ch;   /* Max character width of a line. */
+
+    /* --------------------------------------------------
+      * MODULAR SCALE: Measures for rows and columns.
+      * -------------------------------------------------- */
+ 
+    /* Proportion for modular grid. */
+    --ratio: 1.3;
+ 
+    /* Scale measure map to height and width of square cell */
+    --scale-xxxxxs: calc(var(--scale-xxxxs) / var(--ratio));
+    --scale-xxxxs: calc(var(--scale-xxxs) / var(--ratio));
+    --scale-xxxs: calc(var(--scale-xxs) / var(--ratio));
+    --scale-xxs: calc(var(--scale-xs) / var(--ratio));
+    --scale-xs: calc(var(--scale-s) / var(--ratio));
+    --scale-s: calc(var(--scale-base) / var(--ratio));
+    --scale-base: 1rem;         /* Set baseline grid. */
+    --scale-l: calc(var(--scale-base) * var(--ratio));
+    --scale-xl: calc(var(--scale-l) * var(--ratio));
+    --scale-xxl: calc(var(--scale-xl) * var(--ratio));
+    --scale-xxxl: calc(var(--scale-xxl) * var(--ratio));
+    --scale-xxxl\+s: calc(var(--scale-xxxl) + var(--scale-s));
+    --scale-xxxl\+base: calc(var(--scale-xxxl) + var(--scale-base));
     color: #ffe8d6;
     background-color: #ffe8d6;
     font-family: sans-serif;
@@ -12,13 +38,14 @@ body {
     background-color: gray;
     color: black;
     /* Constrain body width. */
-    max-width: 100ch;
+    max-width: var(--measure);
     /* Prevent content from sticking to inside edges of body. */
-    padding: 1.5rem;
+    padding: var(--scale-base);
     /* Position body in the middle of the screen. */
-    margin-top: 1.5rem;
+    margin-top: var(--scale-base);
     margin-left: auto;
     margin-right: auto;
+    border-radius: var(--scale-xxxxs);
 }
 
 a {
@@ -38,4 +65,31 @@ background-color: #ddbea9;
 
 #about-page {
 background-color: #ddbea9;
+}
+
+#post-page {
+    background-color: #ddbea9;
+    }
+
+.home-icon {
+    float: right;
+}
+
+.cluster {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space, var(--scale-base));
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.post-meta {
+    font-size: var(--scale-s);
+    line-height: var(--scale-base);
+    font-weight: bold;
+}
+
+.summary {
+    font-style: italic;
+    font-size: var(--scale-base);
 }
