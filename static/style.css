@@ -44,6 +44,7 @@ body {
     /* Position body in the middle of the screen. */
     margin: var(--scale-xxs);
     border-radius: var(--scale-xxxxs);
+    overflow-x: hidden;
 }
 
 a {
