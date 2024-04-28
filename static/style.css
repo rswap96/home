@@ -42,9 +42,7 @@ body {
     /* Prevent content from sticking to inside edges of body. */
     padding: var(--scale-base);
     /* Position body in the middle of the screen. */
-    margin-top: var(--scale-base);
-    margin-left: auto;
-    margin-right: auto;
+    margin: var(--scale-xxs);
     border-radius: var(--scale-xxxxs);
 }
 
