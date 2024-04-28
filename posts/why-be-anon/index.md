@@ -8,7 +8,7 @@ summary: Summary
 
 # Why be anonymous?
 
-<img src="cool-okra.jpeg" align="center">
+<div><img src="cool-okra.jpeg" align="center"></div>
 
 
 
