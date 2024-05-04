@@ -1,0 +1,278 @@
+:root {
+    /* --------------------------------------------------
+    * MEASURE: Basis for all proportions.
+    * MODULAR SCALE: Measures for rows and columns.
+    * cf. https://every-layout.dev/
+    * -------------------------------------------------- */
+
+    --measure: 90ch;
+    /* Max character width of a line. */
+
+    --ratio: 1.3;
+    /* Proportion for modular grid. */
+
+    /* Scale measure map to height and width of square cell */
+    --scale-xxxxxs: calc(var(--scale-xxxxs) / var(--ratio));
+    --scale-xxxxs: calc(var(--scale-xxxs) / var(--ratio));
+    --scale-xxxs: calc(var(--scale-xxs) / var(--ratio));
+    --scale-xxs: calc(var(--scale-xs) / var(--ratio));
+    --scale-xs: calc(var(--scale-s) / var(--ratio));
+    --scale-s: calc(var(--scale-base) / var(--ratio));
+    --scale-base: 1rem;
+    /* Set baseline grid. */
+    --scale-l: calc(var(--scale-base) * var(--ratio));
+    --scale-xl: calc(var(--scale-l) * var(--ratio));
+    --scale-xxl: calc(var(--scale-xl) * var(--ratio));
+    --scale-xxxl: calc(var(--scale-xxl) * var(--ratio));
+    --scale-xxxl\+s: calc(var(--scale-xxxl) + var(--scale-s));
+    --scale-xxxl\+base: calc(var(--scale-xxxl) + var(--scale-base));
+
+    /* Aliases for column widths */
+    --col-w-full: var(--measure);
+    --col-w-half: calc(var(--col-w-full) / 2);
+    --col-w-midi: calc(var(--col-w-full) / var(--ratio));
+    --col-w-narrow: calc(var(--col-w-midi) / var(--ratio));
+    --col-w-quarter: calc(var(--col-w-full) / 4);
+    --col-w-eighth: calc(var(--col-w-full) / 8);
+    --col-w-full-bleed: calc(var(--measure) * var(--ratio));
+
+    /* Fonts */
+    --font-family-headings: 'Trebuchet MS', Tahoma, sans-serif, -apple-system;
+    --font-family-prose: 'Palatino', serif;
+    --font-family-code: 'Fira Code', 'Lucida Console', monospace;
+
+    /* Colors */
+    --color-background: white;
+    --color-body-bg: #d9d9d9;
+    --color-body-text: black;
+    --color-header: var(var(--color-background));
+    --color-code: #4a4e69;
+
+
+    --color-link-font: darkred;
+    --color-link-emphasis-bg: #3c6e71;
+    --color-link-emphasis-font: white;
+
+    color: var(--color-body-text);
+    background-color: var(--color-background);
+}
+
+/* Find all the fancily named colours at:
+https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#Color_keywords */
+
+* {
+    max-width: var(--col-w-full-bleed);
+}
+
+body {
+    display: block;
+    margin: var(--scale-xxs);
+    overflow-x: hidden;
+}
+
+html,
+body,
+div,
+header,
+main {
+    font-family: var(--font-family-prose);
+    font-size: var(--scale-base);
+    font-weight: normal;
+    font-style: normal;
+    line-height: var(--scale-l);
+}
+
+
+main {
+    margin: var(--scale-s);
+}
+
+pre {
+    padding: var(--scale-s);
+    border-radius: var(--scale-xxxxs);
+    background-color: var(--color-background);
+    overflow-x: auto;
+}
+
+code {
+    color: var(--color-code) !important;
+    font-size: var(--scale-s);
+    line-height: var(--scale-l);
+    font-family: var(--font-family-code);
+    font-weight: bold;
+}
+
+a {
+    color: var(--color-link-font);
+    text-underline-offset: var(--scale-xxxs);
+}
+
+a:hover {
+    color: var(--color-link-emphasis-font);
+    background: var(--color-link-emphasis-bg);
+}
+
+hr {
+    margin: 0;
+    background-color: black;
+    height: var(--scale-xxxxs);
+}
+
+h1 {
+    font-size: var(--scale-l);
+    line-height: var(--scale-xl);
+}
+
+h2 {
+    font-weight: normal;
+    font-style: italic;
+    font-size: var(--scale-l);
+    line-height: var(--scale-xl);
+}
+
+h3 {
+    font-size: var(--scale-base);
+    line-height: var(--scale-l);
+    font-style: italic;
+}
+
+nav {
+    gap: var(--scale-base);
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+img {
+    max-width: 100%;
+}
+
+/* General purpose composable layouts */
+
+.center {
+    box-sizing: content-box;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: var(--col-w-full);
+}
+
+.box {
+    padding: var(--scale-s);
+    border-radius: var(--scale-xxxxs);
+    background-color: var(--color-body-bg);
+}
+
+.box.invert {
+    background-color: var(--color-background);
+}
+
+.cluster {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space, var(--scale-base));
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.stack {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.stack>* {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.stack>*+* {
+    margin-top: var(--scale-base);
+}
+
+.with-sidebar,
+.with-sidebar-narrow {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--scale-base);
+    max-width: var(--col-w-full);
+}
+
+.with-sidebar> :first-child {
+    flex-basis: 0;
+    flex-grow: 7;
+}
+
+.with-sidebar> :last-child {
+    flex-basis: 0;
+    flex-grow: 2;
+
+}
+
+.with-sidebar-narrow> :first-child {
+    flex-basis: 0;
+    flex-grow: 2;
+}
+
+.with-sidebar-narrow> :last-child {
+    flex-basis: 0;
+    flex-grow: 7;
+}
+
+/* Special styles */
+
+.site-header,
+.site-header *,
+.work-header,
+.work-header * {
+    font-family: var(--font-family-headings);
+}
+
+.site-header\:nav-items * {
+    background-color: var(--color-link-emphasis-bg);
+    padding: var(--scale-xxxxxs);
+    font-size: var(--scale-base);
+    line-height: var(--scale-s);
+    text-align: center;
+}
+
+.summary {
+    font-style: italic;
+}
+
+.post-meta, .tag-index-item {
+    font-family: var(--font-family-headings);
+    font-size: var(--scale-s);
+    line-height: var(--scale-base);
+}
+
+.post-meta {
+    font-weight: bold;
+}
+
+.tag-index-item {
+    background-color: var(--color-link-emphasis-bg);
+    text-underline-offset: var(--scale-xs);
+}
+
+.footnotes,
+.footer,
+.footer * {
+    font-family: var(--font-family-headings);
+    font-size: var(--scale-s);
+    line-height: var(--scale-l);
+    color: var(--color-body-text);
+}
+
+.footer {
+    text-align: center;
+}
+
+.email {
+    font-family: var(--font-family-headings);
+    font-weight: bold;
+    font-size: var(--scale-s);
+    line-height: var(--scale-base);
+    color: var(--color-body-text);
+    background-color: var(--color-link-emphasis-bg);
+    padding: var(--scale-xxs);
+    border-radius: var(--scale-xxxxxs);
+}
