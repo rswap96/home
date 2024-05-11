@@ -132,11 +132,12 @@ h2 {
     line-height: var(--scale-xl);
 }
 
-.post-summary-block {
+details > p {
     font-style: italic;
     font-size: var(--scale-base);
     line-height: var(--scale-l);
 }
+
 
 h3 {
     font-size: var(--scale-base);
