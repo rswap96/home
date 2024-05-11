@@ -52,6 +52,7 @@
     --color-link-font: darkred;
     --color-link-emphasis-bg: #3c6e71;
     --color-link-emphasis-font: white;
+    --color-font-selection: black;
 
     color: var(--color-body-text);
     background-color: var(--color-background);
@@ -64,6 +65,7 @@
 body {
     display: block;
     overflow-x: hidden;
+    margin: var(--scale-xxs);
 }
 
 html,
@@ -76,6 +78,7 @@ main {
     font-weight: normal;
     font-style: normal;
     line-height: var(--scale-l);
+    max-width: none;
 }
 
 main {
@@ -105,7 +108,11 @@ a {
 a:hover {
     color: var(--color-link-emphasis-font);
     background: var(--color-link-emphasis-bg);
+    text-underline-offset: var(--scale-xxs);
+    text-decoration-color: var(--color-link-emphasis-bg);
+    text-decoration-thickness: var(--scale-xxxxxs);
 }
+
 
 hr {
     margin: 0;
@@ -139,13 +146,23 @@ nav {
 
 img {
     max-width: 100%;
+    height: auto;
+    display: block;
+    margin-inline: auto;
+    width: 90%;
+    border-radius: var(--scale-xxxxxs);
+}
+
+img:hover {
+    box-shadow: 0 0 2px 1px rgba(0, 140, 185, 0.5);
 }
 
 /* General purpose composable layouts */
 
 .center {
     box-sizing: content-box;
-    margin-inline: auto;
+    margin-left: auto;
+    margin-right: auto;
     max-width: var(--col-w-full);
 }
 
@@ -170,7 +187,7 @@ img {
 .stack {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 .top-stack {
@@ -248,6 +265,7 @@ img {
     font-weight: bold;
 }
 
+
 .tag-index-item {
     background-color: var(--color-link-emphasis-bg);
     text-underline-offset: var(--scale-xs);
@@ -269,4 +287,9 @@ img {
 .home-icon {
     border: none;
     cursor: pointer;
+}
+
+::selection {
+    color: white;
+    background-color: var(--color-font-selection);
 }
