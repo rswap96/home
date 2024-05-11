@@ -52,7 +52,7 @@
     --color-link-font: darkred;
     --color-link-emphasis-bg: #3c6e71;
     --color-link-emphasis-font: white;
-    --color-font-selection: black;
+    --color-font-selection: #084a4e;
 
     color: var(--color-body-text);
     background-color: var(--color-background);
@@ -108,7 +108,7 @@ a {
 a:hover {
     color: var(--color-link-emphasis-font);
     background: var(--color-link-emphasis-bg);
-    text-underline-offset: var(--scale-xxs);
+    text-underline-offset: var(--scale-xxxs);
     text-decoration-color: var(--color-link-emphasis-bg);
     text-decoration-thickness: var(--scale-xxxxxs);
 }
