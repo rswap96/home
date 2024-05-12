@@ -136,20 +136,24 @@ h1 {
 }
 
 h2 {
-    display: grid;
-    width: 100%;
-    align-items: center;
-    text-align: center;
-    grid-template-columns: minmax(20px, 1fr) auto minmax(20px, 1fr);
-    grid-gap: var(--scale-base);
     font-weight: normal;
     font-style: italic;
     font-size: var(--scale-l);
     line-height: var(--scale-xl);
 }
 
-h2:before,
-h2:after {
+article h2 {
+    display: grid;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    grid-template-columns: minmax(20px, 1fr) auto minmax(20px, 1fr);
+    grid-gap: var(--scale-base);
+
+}
+
+article h2:before,
+article h2:after {
     content: '';
     border-top: var(--scale-xxxxxxs) dotted;
 }
