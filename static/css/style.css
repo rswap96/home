@@ -84,7 +84,7 @@ main {
 }
 
 main {
-    margin: var(--scale-s);
+    margin: var(--scale-xxs);
 }
 
 pre {
@@ -107,12 +107,24 @@ a {
     text-underline-offset: var(--scale-xxxs);
 }
 
+.tags a {
+    background-color: black;
+    color: white;
+    text-decoration-color: black;
+    text-underline-offset: var(--scale-xxxs);
+}
+.tags a:hover {
+    background-color: #9f4daf;
+    color: white;
+    text-decoration-color: #9f4daf;
+    text-underline-offset: var(--scale-xxs);
+}
+
 a:hover {
     color: var(--color-link-emphasis-font);
     background: var(--color-link-emphasis-bg);
-    text-underline-offset: var(--scale-xxxs);
+    text-underline-offset: var(--scale-xxs);
     text-decoration-color: var(--color-link-emphasis-bg);
-    text-decoration-thickness: var(--scale-xxxxxs);
 }
 
 hr {
@@ -325,4 +337,8 @@ img:hover {
 ::selection {
     color: white;
     background-color: var(--color-font-selection);
+}
+
+.toc {
+    margin-bottom: var(--scale-base);
 }
