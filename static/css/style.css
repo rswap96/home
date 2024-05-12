@@ -6,12 +6,14 @@
     * -------------------------------------------------- */
 
     /* Max character width of a line. */
-    --measure: 100ch;
+    --measure: 90ch;
 
     /* Proportion for modular grid. */
     --ratio: 1.3;
 
     /* Scale measure map to height and width of square cell */
+    --scale-xxxxxxxs: calc(var(--scale-xxxxxxs) / var(--ratio));
+    --scale-xxxxxxs: calc(var(--scale-xxxxxs) / var(--ratio));
     --scale-xxxxxs: calc(var(--scale-xxxxs) / var(--ratio));
     --scale-xxxxs: calc(var(--scale-xxxs) / var(--ratio));
     --scale-xxxs: calc(var(--scale-xxs) / var(--ratio));
@@ -113,23 +115,43 @@ a:hover {
     text-decoration-thickness: var(--scale-xxxxxs);
 }
 
-
 hr {
     margin: 0;
     background-color: black;
     height: var(--scale-xxxxxs);
 }
 
+article hr {
+    margin: 0;
+    background-color: rgb(199, 197, 197);
+    height: 0;
+    border-radius: 20%;
+}
+
 h1 {
     font-size: var(--scale-l);
     line-height: var(--scale-xl);
+    text-align: center;
+    position: relative;
 }
 
 h2 {
+    display: grid;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    grid-template-columns: minmax(20px, 1fr) auto minmax(20px, 1fr);
+    grid-gap: var(--scale-base);
     font-weight: normal;
     font-style: italic;
     font-size: var(--scale-l);
     line-height: var(--scale-xl);
+}
+
+h2:before,
+h2:after {
+    content: '';
+    border-top: var(--scale-xxxxxxs) dotted;
 }
 
 details > p {
@@ -174,7 +196,7 @@ img:hover {
 }
 
 .box {
-    padding: var(--scale-s);
+    padding: var(--scale-base);
     border-radius: var(--scale-xxxxs);
     background-color: var(--color-body-bg);
 }
@@ -299,4 +321,15 @@ img:hover {
 ::selection {
     color: white;
     background-color: var(--color-font-selection);
+}
+
+.incremental li {
+    margin-bottom: var(--scale-l);
+    font-size: var(--scale-base);
+    height: var(--scale-base);
+}
+
+.incremental > ul {
+    padding: 0;
+    list-style-position: inside;
 }
