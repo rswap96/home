@@ -322,14 +322,3 @@ img:hover {
     color: white;
     background-color: var(--color-font-selection);
 }
-
-.incremental li {
-    margin-bottom: var(--scale-l);
-    font-size: var(--scale-base);
-    height: var(--scale-base);
-}
-
-.incremental > ul {
-    padding: 0;
-    list-style-position: inside;
-}
