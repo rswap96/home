@@ -345,6 +345,13 @@ img:hover {
     text-align: center;
 }
 
+.site-footer {
+    font-family: var(--font-family-headings);
+    font-size: var(--scale-s);
+    line-height: var(--scale-base);
+    color: var(--color-body-text);
+    text-align: center;
+}
 
 ::selection {
     color: white;
