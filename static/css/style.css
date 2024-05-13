@@ -48,6 +48,7 @@
     /* Colors */
     --color-background: white;
     --color-body-bg: #d9d9d9;
+    --color-post-header-bg: #eae7e7;
     --color-body-text: black;
     --color-header: var(var(--color-background));
     --color-code: #4a4e69;
@@ -84,7 +85,8 @@ main {
 }
 
 main {
-    margin: var(--scale-xxs);
+    margin: 0;
+    padding: var(--scale-xs);
 }
 
 pre {
@@ -295,6 +297,9 @@ img:hover {
     line-height: var(--scale-s);
     text-align: center;
 }
+/* #site-header > * {
+    background-color: var(--color-post-header-bg) !important;
+} */
 
 .summary {
     font-style: italic;
@@ -341,4 +346,12 @@ img:hover {
 
 .toc {
     margin-bottom: var(--scale-base);
+}
+.toc summary {
+    text-align: center;
+}
+
+.twitter-tweet {
+    margin: auto;
+
 }
