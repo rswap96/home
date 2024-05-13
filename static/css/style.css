@@ -86,7 +86,7 @@ main {
 
 main {
     margin: 0;
-    padding: var(--scale-xs);
+    padding: var(--scale-xxxxxs);
 }
 
 pre {
@@ -136,7 +136,8 @@ hr {
 }
 
 article hr {
-    margin: 0;
+    margin-top: var(--scale-s);
+    margin-bottom: var(--scale-s);
     background-color: rgb(199, 197, 197);
     height: 0;
     border-radius: 20%;
@@ -145,7 +146,6 @@ article hr {
 h1 {
     font-size: var(--scale-l);
     line-height: var(--scale-xl);
-    text-align: center;
     position: relative;
 }
 
@@ -237,11 +237,22 @@ img:hover {
     justify-content: flex-start;
 }
 
-.top-stack {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+.top-stack { 
+    display: grid;
+    column-gap: var(--scale-base);
+    grid-template-columns: 90% 10%;
+    background-color: var(--color-body-bg);
     align-items: center;
+}
+
+.post-title {
+    justify-content: center;
+    align-content: left;
+}
+
+.home-icon {
+    border: none;
+    cursor: pointer;
 }
 
 .stack>* {
@@ -301,7 +312,7 @@ img:hover {
     background-color: var(--color-post-header-bg) !important;
 } */
 
-.summary {
+.summary * {
     font-style: italic;
 }
 
@@ -334,10 +345,6 @@ img:hover {
     text-align: center;
 }
 
-.home-icon {
-    border: none;
-    cursor: pointer;
-}
 
 ::selection {
     color: white;
