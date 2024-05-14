@@ -12,6 +12,7 @@
     --ratio: 1.3;
 
     /* Scale measure map to height and width of square cell */
+    --scale-xxxxxxxxs: calc(var(--scale-xxxxxxxs) / var(--ratio));
     --scale-xxxxxxxs: calc(var(--scale-xxxxxxs) / var(--ratio));
     --scale-xxxxxxs: calc(var(--scale-xxxxxs) / var(--ratio));
     --scale-xxxxxs: calc(var(--scale-xxxxs) / var(--ratio));
@@ -204,6 +205,32 @@ img:hover {
     box-shadow: 0 0 2px 1px rgba(0, 140, 185, 0.5);
 }
 
+table {
+    page-break-inside: auto;
+    text-align: left;
+    border-spacing: 0;
+    border: 1px solid darkslategray;
+    margin: 0;
+}
+
+table caption {
+    font-size: var(--scale-s);
+    margin-bottom: 3px;
+    font-weight: bold;
+}
+
+th {
+    font-size: var(--scale-s);
+    page-break-inside: auto;
+    border: 1px solid darkslategray;
+    border-spacing: 0;
+}
+
+td {
+    font-size: var(--scale-s);
+    border: 1px solid darkslategray;
+    border-spacing: 0;
+}
 /* General purpose composable layouts */
 
 .center {
@@ -348,9 +375,10 @@ img:hover {
 .site-footer {
     font-family: var(--font-family-headings);
     font-size: var(--scale-s);
-    line-height: var(--scale-base);
+    line-height: var(--scale-l);
     color: var(--color-body-text);
     text-align: center;
+    background-color: var(--color-background);
 }
 
 ::selection {
@@ -368,4 +396,8 @@ img:hover {
 .twitter-tweet {
     margin: auto;
 
+}
+
+.small-text {
+    font-size: var(--scale-s);
 }
