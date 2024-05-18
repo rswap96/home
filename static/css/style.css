@@ -192,6 +192,14 @@ nav {
     justify-content: flex-start;
 }
 
+figure {
+    margin: 0;
+    padding: var(--scale-s);
+    border-radius: var(--scale-xxxxxs);
+    background-color: var(--color-background);
+    overflow-x: auto;
+}
+
 img {
     max-width: 100%;
     height: auto;
@@ -199,6 +207,17 @@ img {
     margin-inline: auto;
     width: 90%;
     border-radius: var(--scale-xxxxxs);
+    overflow-clip-margin: content-box;
+    overflow: clip;
+}
+
+figure > figcaption {
+    margin-top: var(--scale-s);
+    padding: var(--scale-xxs);
+    font-size: var(--scale-s);
+    line-height: var(--scale-l);
+    font-weight: bold;
+    text-align: center;
 }
 
 img:hover {
@@ -231,6 +250,13 @@ td {
     border: 1px solid darkslategray;
     border-spacing: 0;
 }
+
+button:hover {
+    background-color: black;
+    color: pink;
+    border-color: white;
+}
+
 /* General purpose composable layouts */
 
 .center {
@@ -401,3 +427,4 @@ td {
 .small-text {
     font-size: var(--scale-s);
 }
+
