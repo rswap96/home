@@ -87,7 +87,7 @@ main {
 
 main {
     margin: 0;
-    padding: var(--scale-xxxxxs);
+    padding: var(--scale-xxxs);
 }
 
 pre {
@@ -257,6 +257,10 @@ button:hover {
     border-color: white;
 }
 
+blockquote {
+    padding-left: 0;
+    margin-left: var(--scale-base);
+}
 /* General purpose composable layouts */
 
 .center {
