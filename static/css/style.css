@@ -43,7 +43,7 @@
 
     /* Fonts */
     --font-family-headings: 'Trebuchet MS', Tahoma, sans-serif, -apple-system;
-    --font-family-prose: 'Palatino', serif;
+    --font-family-prose: 'Palatino', sans-serif;
     --font-family-code: 'Fira Code', 'Lucida Console', monospace;
 
     /* Colors */
@@ -231,6 +231,8 @@ table {
     border-spacing: 0;
     border: 1px solid darkslategray;
     margin: 0;
+    table-layout: fixed;
+    width: 100%;
 }
 
 table caption {
@@ -254,6 +256,21 @@ td {
     padding-left: var(--scale-xxxxxs);
 }
 
+td, th {
+    overflow: hidden;
+    word-wrap: break-word;
+    text-overflow: ellipsis;
+    text-wrap: wrap;
+}
+
+@media only screen and (max-width: 480px) {
+    /* horizontal scrollbar for tables if mobile screen */
+    .tablemobile {
+        overflow-x: auto;
+        display: block;
+    }
+}
+
 button:hover {
     background-color: black;
     color: pink;
@@ -265,6 +282,8 @@ blockquote {
     margin: auto;
     align-content: center;
     font-size: var(--scale-base);
+    max-width: 100%;
+    overflow: clip;
 }
 
 /* General purpose composable layouts */
